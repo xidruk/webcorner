@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1100">
+  <title>Khalid BARKAN</title>
+  <link rel="stylesheet" href="front_logic/styles.css">
+</head>
+<body>
+
+  <div id="topbar">
+    <div id="topbar-left">
+      <span>&#9632;</span>
+      khalid-barkan@webcorner:~$
+    </div>
+    <div id="topbar-right">
+      <div id="social-links">
+        <a href="https://github.com/xidruk" target="_blank">[ GitHub ]</a>
+        <a href="https://x.com/xidruk" target="_blank">[ X ]</a>
+        <a href="https://www.linkedin.com/in/khalid-barkan-36a628365/" target="_blank">[ LinkedIn ]</a>
+        <a href="https://xidruk.substack.com/" target="_blank">[ Substack ]</a>
+      </div>
+      <button id="search-trigger" title="Search (Ctrl+K)">
+        &#9906; SEARCH <span class="search-kbd">Ctrl+K</span>
+      </button>
+      <div class="theme-switch-wrap" title="Toggle light / dark" id="theme-switch-track">
+        <span class="switch-label-dark">DARK</span>
+        <div class="switch-track">
+          <div class="switch-knob"></div>
+        </div>
+        <span class="switch-label-light">LIGHT</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="layout">
+
+    <div id="sidebar">
+      <div id="sidebar-title">[ NAVIGATION ]</div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link toc-home-link" data-page="home">~ &gt;&gt; Home</a>
+      </div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link" data-page="about">01 &gt;&gt; About</a>
+      </div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link" data-page="projects">02 &gt;&gt; Projects</a>
+      </div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link" data-page="blog">03 &gt;&gt; Blog</a>
+      </div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link" data-page="learning">04 &gt;&gt; Learning</a>
+      </div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link" data-page="curriculum">05 &gt;&gt; Curriculum</a>
+      </div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link" data-page="lib">06 &gt;&gt; Lib</a>
+      </div>
+      <div class="toc-item-wrap">
+        <a class="toc-nav-link" data-page="media">07 &gt;&gt; Media</a>
+      </div>
+      <span class="toc-status">[ META ]</span>
+      <span class="toc-meta-item">Location : Morocco</span>
+      <span class="toc-meta-item">Os : Fedora</span>
+      <span class="toc-meta-item">Lang : C/C++ / Python</span>
+      <span class="toc-meta-item">Org : @raystronic</span>
+    </div>
+
+    <div id="main">
+
+      <div class="page hidden" id="page-home">
+
+        <div class="section-label">[ WHO I AM ]</div>
+        <div class="home-bio-row">
+          <div class="home-pic-wrap">
+            <img src="front_logic/my_pic.png" alt="Khalid BARKAN">
+          </div>
+          <div class="home-identity">
+            <div class="home-identity-name">Khalid Barkan</div>
+            <table class="identity-table">
+              <tr>
+                <td>Positions</td>
+                <td>Software Engineer / Student / Startup Founder</td>
+              </tr>
+              <tr>
+                <td>Interests-in</td>
+                <td>Pure Mathematics / Cryptography / Advanced Machine Intelligence / Quantum Physics / Quantum Computers</td>
+              </tr>
+              <tr>
+                <td>Current-focus</td>
+                <td>Building @Xstartup / Studying at 1337</td>
+              </tr>
+              <tr>
+                <td>Hobbies</td>
+                <td>Music / Reading / Writing</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="home-bio-text" style="margin-bottom: 20px;">
+          <p>
+          I'm currently a student at 1337 and a software engineer. I'm also building my own startup on the side. 
+          I spend most of my time learning about low-level systems, math, cryptography and advanced machine intelligence. 
+          I like to build tools for my own good and some of it is public to use by others, you can check the projects part.
+          </p>
+          <p style="margin-top: 14px;">
+            In my free time i do write and share my thoughts on substack, you can reach it through the link => 
+            <a href="https://xidruk.substack.com/" target="_blank">[MY SUBSTACK]</a>
+            . my writings covers different topics include: linux, math, cryptography, computer stuff ...
+          </p>
+        </div>
+
+        <hr>
+
+        <div class="section-label">[ SITE MAP ]</div>
+        <div class="home-nav-grid">
+          <div class="home-nav-card" data-page="about">
+            <div class="home-nav-card-title">About</div>
+            <div class="home-nav-card-desc">Background, skills, education, contact channels and how I think about things.</div>
+          </div>
+          <div class="home-nav-card" data-page="projects">
+            <div class="home-nav-card-title">Projects</div>
+            <div class="home-nav-card-desc">Real things I built -- garbage collectors, hash maps, ELF inspectors, and more.</div>
+          </div>
+          <div class="home-nav-card" data-page="blog">
+            <div class="home-nav-card-title">Blog</div>
+            <div class="home-nav-card-desc">Writing on Substack -- math, cryptography, Linux, philosophy, and whatever else is in my head.</div>
+          </div>
+          <div class="home-nav-card" data-page="learning">
+            <div class="home-nav-card-title">Learning</div>
+            <div class="home-nav-card-desc">Public repositories I use to study and take notes -- networking, memory, math, and more.</div>
+          </div>
+          <div class="home-nav-card" data-page="curriculum">
+            <div class="home-nav-card-title">Curriculum</div>
+            <div class="home-nav-card-desc">Projects built while learning -- practice, exercises, and things built to understand something deeper.</div>
+          </div>
+          <div class="home-nav-card" data-page="lib">
+            <div class="home-nav-card-title">Lib</div>
+            <div class="home-nav-card-desc">A personal library -- PDFs, papers, and resources worth keeping. Mine and others.</div>
+          </div>
+          <div class="home-nav-card" data-page="media">
+            <div class="home-nav-card-title">Media</div>
+            <div class="home-nav-card-desc">A personal library -- Pictures, Videos ...etc, for me and the events i was in.</div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="section-label">[ CONTACT CHANNELS ]</div>
+        <table class="contact-table">
+          <tr>
+            <td>GitHub</td>
+            <td><a href="https://github.com/xidruk" target="_blank">github.com/xidruk</a></td>
+          </tr>
+          <tr>
+            <td>X / Twitter</td>
+            <td><a href="https://x.com/xidruk" target="_blank">x.com/xidruk</a></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td><a href="https://www.linkedin.com/in/khalid-barkan-36a628365/" target="_blank">linkedin.com/in/khalid-barkan</a></td>
+          </tr>
+          <tr>
+            <td>Substack</td>
+            <td><a href="https://xidruk.substack.com/" target="_blank">xidruk.substack.com</a></td>
+          </tr>
+          <tr>
+            <td>TryHackMe</td>
+            <td><a href="https://tryhackme.com/p/xidruk" target="_blank">tryhackme.com/p/xidruk</a></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><a href="mailto:khalidbarkan.contact@gmail.com">khalidbarkan.contact@gmail.com</a></td>
+          </tr>
+        </table>
+
+        <div id="footer">
+          khalid barkan &nbsp;/&nbsp; xidruk &nbsp;&mdash;&nbsp;
+          built by hand, no templates &nbsp;|&nbsp; <span id="footer-year"></span>
+        </div>
+
+      </div>
+
+      <div class="page hidden" id="page-about">
+
+        <div class="section-label">[ 01 -- ABOUT ]</div>
+
+        <div class="section-label-sub">$> EDUCATION :</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Period</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1337 Coding School</td>
+              <td>2024-Present</td>
+              <td class="status-active">enrolled</td>
+            </tr>
+            <tr>
+              <td>Sultan Moulay Slimane University</td>
+              <td>2021-2023</td>
+              <td class="status-drop">dropped out</td>
+            </tr>
+            <tr>
+              <td>EMSET-P >? Moroccan Specialized School of Technical Education</td>
+              <td>2022-2024</td>
+              <td class="status-done">graduated</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-label-sub">$> CERTIFICATIONS & DEGREES : </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Institution</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TSDI-Bac+2 Technical Degree</td>
+              <td>EMSET-P</td>
+              <td>2024</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-label-sub">$> TECHNICAL SKILLS :</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Languages</td>
+              <td>C, C++, Python, Bash</td>
+            </tr>
+            <tr>
+              <td>Platforms</td>
+              <td>Linux</td>
+            </tr>
+            <tr>
+              <td>Containerization</td>
+              <td>Docker</td>
+            </tr>
+            <tr>
+              <td>Version Control</td>
+              <td>Git, GitHub</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-label-sub">$> SPOKEN LANGUAGES :</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Arabic</td>
+              <td>native</td>
+            </tr>
+            <tr>
+              <td>Tamazight</td>
+              <td>native</td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>working proficiency</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-label-sub">$> CONTACT CHANNELS :</div>
+        <table class="contact-table">
+          <tr>
+            <td>GitHub</td>
+            <td><a href="https://github.com/xidruk" target="_blank">github.com/xidruk</a></td>
+          </tr>
+          <tr>
+            <td>X / Twitter</td>
+            <td><a href="https://x.com/xidruk" target="_blank">x.com/xidruk</a></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td><a href="https://www.linkedin.com/in/khalid-barkan-36a628365/" target="_blank">linkedin.com/in/khalid-barkan</a></td>
+          </tr>
+          <tr>
+            <td>Substack</td>
+            <td><a href="https://xidruk.substack.com/" target="_blank">xidruk.substack.com</a></td>
+          </tr>
+          <tr>
+            <td>TryHackMe</td>
+            <td><a href="https://tryhackme.com/p/xidruk" target="_blank">tryhackme.com/p/xidruk</a></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><a href="mailto:khalidbarkan.contact@gmail.com">khalidbarkan.contact@gmail.com</a></td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="page hidden" id="page-projects">
+
+        <div class="section-label">[ 02 -- PROJECTS ]</div>
+
+        <div class="home-bio-text" style="margin-bottom: 16px;">
+          <p>
+            These are projects I built to solve problems I actually faced or to train myself
+            on technologies and techniques I was learning. Each one has a real reason behind it.
+          </p>
+          <p style="margin-top: 10px; color: var(--text-faint); font-size: 12px;">
+            CTC :: Call to Contribute -- if you want to contribute to any of these projects,
+            contributions are open and welcome on GitHub.
+          </p>
+          <div class="suk-note">
+            <span class="suk-label">SUK</span>
+            <span>Shortcuts Unlocking Key :
+              <span class="status-live">live</span> == project is finished and live to use &nbsp;&nbsp;
+              <span class="status-underdev">underdev</span> == currently under development &nbsp;&nbsp;
+              <span class="dlink">[DLink]</span> == direct link to the resource
+            </span>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Description</th>
+              <th>Tools</th>
+              <th>Status</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>garbage-collector</td>
+              <td>Lightweight GC for C, C++, Python</td>
+              <td>C, Make</td>
+              <td><span class="status-live">live</span></td>
+              <td><a href="#" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>hash-map</td>
+              <td>Key-value store implementation</td>
+              <td>C, Make</td>
+              <td><span class="status-live">live</span></td>
+              <td><a href="#" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>xt3-tree</td>
+              <td>Tree command clone with colors and file sizes</td>
+              <td>C, Make</td>
+              <td><span class="status-live">live</span></td>
+              <td><a href="#" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>finsp</td>
+              <td>File inspector</td>
+              <td>Python, C, Make</td>
+              <td><span class="status-underdev">underdev</span></td>
+              <td><a href="#" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="page hidden" id="page-blog">
+        <div class="section-label">[ 03 -- BLOG ]</div>
+        <p style="color: var(--text-muted); font-size: 13px; line-height: 2;">check my blog on Substack : <a href="https://xidruk.substack.com/" target="_blank" >https://xidruk.substack.com/</a></p>
+      </div>
+
+      <div class="page hidden" id="page-learning">
+
+        <div class="section-label">[ 04 -- LEARNING ]</div>
+
+        <div class="home-bio-text" style="margin-bottom: 16px;">
+          <p>
+            These are learning resources I built for myself while studying. I write them down,
+            structure them, and make them public so others can read and benefit from them too.
+            Every resource here started as personal notes and turned into something shareable.
+          </p>
+          <p style="margin-top: 10px; color: var(--text-faint); font-size: 12px;">
+            CTC :: Call to Contribute -- if you want to contribute to any of these projects,
+            contributions are open and welcome on GitHub.
+          </p>
+          <div class="suk-note">
+            <span class="suk-label">SUK</span>
+            <span>Shortcuts Unlocking Key :
+              <span class="status-live">finished</span> == writing is complete and public &nbsp;&nbsp;
+              <span class="status-underdev">underwriting</span> == currently being written &nbsp;&nbsp;
+              <span class="dlink">[DLink]</span> == direct link to the resource
+            </span>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Core Concepts</th>
+              <th>Status</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Math Quest</td>
+              <td>A structured quest to understand and learn mathematics from the ground up, foundations, logic, algebra, calculus and beyond</td>
+              <td><span class="status-underdev">underwriting</span></td>
+              <td><a href="https://github.com/xidruk/" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>Network Programming</td>
+              <td>Hands-on software side of networking, sockets, protocols, system calls, building and interacting with networked applications in code</td>
+              <td><span class="status-underdev">underwriting</span></td>
+              <td><a href="https://github.com/xidruk/" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>DSA</td>
+              <td>Data structures and algorithms, arrays, linked lists, trees, graphs, sorting, searching, complexity analysis</td>
+              <td><span class="status-underdev">underwriting</span></td>
+              <td><a href="https://github.com/xidruk/" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>Computer Networking</td>
+              <td>Computer networking from scratch, IP, TCP/UDP, DNS, HTTP, routing, subnetting, OSI model, how the internet actually works</td>
+              <td><span class="status-live">finished</span></td>
+              <td><a href="https://github.com/xidruk/computer-networking" target="_blank" class="dlink">[DLink]</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="page hidden" id="page-curriculum">
+
+        <div class="section-label">[ 05 -- CURRICULUM ]</div>
+
+      <div class="home-bio-text" style="margin-bottom: 24px;">
+        <p>
+          Projects and assignments completed as part of formal curricula, schools, universities, and online programs.
+          These are not personal projects, they are structured learning paths with defined objectives.
+        </p>
+        <div class="suk-note">
+          <span class="suk-label">SUK</span>
+          <span>Shortcuts Unlocking Key :
+            <span class="status-live">finished</span> == project completed &nbsp;&nbsp;
+            <span class="status-underdev">underdev</span> == still in progress &nbsp;&nbsp;
+            <span class="dlink">[DLink]</span> == direct link to the resource
+          </span>
+        </div>
+      </div>
+
+        <div class="section-label-sub">$> 42 NETWORK: 1337 CODING SCHOOL </div>
+        <div class="home-bio-text" style="margin-bottom: 12px;">
+          <p>
+            1337 is part of the 42 Network, a peer-to-peer programming school with no teachers and no lectures.
+            Everything is project-based. You figure it out or you don't move forward.
+          </p>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Core Learning</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ft_irc</td>
+              <td>IRC server implementation</td>
+              <td><span class="status-underdev">underdev</span></td>
+              <td>networking, sockets, TCP, protocols</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>inception</td>
+              <td>Multi-service infrastructure with Docker</td>
+              <td><span class="status-underdev">underdev</span></td>
+              <td>Docker, containers, networking, services</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>cpp modules 00-04</td>
+              <td>C++ fundamentals through 5 progressive modules</td>
+              <td><span class="status-live">finished</span></td>
+              <td>OOP, classes, inheritance, polymorphism, interfaces</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>netpractice</td>
+              <td>Network configuration and subnetting exercises</td>
+              <td><span class="status-live">finished</span></td>
+              <td>TCP/IP, subnetting, routing, network config</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>cub3d</td>
+              <td>3D game engine using raycasting</td>
+              <td><span class="status-live">finished</span></td>
+              <td>raycasting, 3D rendering, math, graphics, C</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>philosophers</td>
+              <td>Dining philosophers concurrency problem</td>
+              <td><span class="status-live">finished</span></td>
+              <td>threads, mutexes, deadlock, concurrency, C</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>minishell</td>
+              <td>Bash-like shell implementation</td>
+              <td><span class="status-live">finished</span></td>
+              <td>processes, pipes, signals, parsing, fork, exec</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>fract-ol</td>
+              <td>Fractal renderer -- Mandelbrot, Julia sets</td>
+              <td><span class="status-live">finished</span></td>
+              <td>complex numbers, graphics, math, optimization</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>push_swap</td>
+              <td>Sorting algorithm with limited stack operations</td>
+              <td><span class="status-live">finished</span></td>
+              <td>algorithms, sorting, stacks, complexity</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>minitalk</td>
+              <td>Process communication using UNIX signals</td>
+              <td><span class="status-live">finished</span></td>
+              <td>signals, SIGUSR1, SIGUSR2, IPC, bit manipulation</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>born2beroot</td>
+              <td>VM setup and Linux system administration</td>
+              <td><span class="status-live">finished</span></td>
+              <td>Linux, VM, partitioning, SSH, firewall, sudo, cron</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>get_next_line</td>
+              <td>Read a file line by line using a single fd</td>
+              <td><span class="status-live">finished</span></td>
+              <td>file descriptors, static variables, buffers, C</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>ft_printf</td>
+              <td>Reimplementation of printf from scratch</td>
+              <td><span class="status-live">finished</span></td>
+              <td>variadic functions, parsing, format specifiers, C</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>libft</td>
+              <td>Custom C standard library from scratch</td>
+              <td><span class="status-live">finished</span></td>
+              <td>C, memory, strings, linked lists, stdlib reimplementation</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-label-sub">$> MOOC.FI: UNIVERSITY OF HELSINKI</div>
+        <div class="home-bio-text" style="margin-bottom: 12px;">
+          <p>
+            The University of Helsinki's Department of Computer Science offers free open online courses.
+            I completed two Python courses, an introduction and an advanced track.
+          </p>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Core Learning</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Introduction to Programming</td>
+              <td>First Python course -- basics, logic, data structures</td>
+              <td><span class="status-live">finished</span></td>
+              <td>Python, variables, loops, functions, files, OOP basics</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+            <tr>
+              <td>Advanced Programming</td>
+              <td>Second Python course -- deeper OOP, algorithms, functional programming</td>
+              <td><span class="status-underdev">underdev</span></td>
+              <td>OOP, recursion, algorithms, iterators, generators</td>
+              <td><a href="https://github.com/xidruk/" target="_blank">[DLink]</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-label-sub">$> EMSET-P: TECHNICAL SCHOOL </div>
+        <div class="home-bio-text" style="margin-bottom: 12px;">
+          <p>
+            2-year technical formation at EMSET-P. Curriculum data not available for public sharing.
+          </p>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Core Learning</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section-label-sub">$> SULTAN MOULAY SLIMANE UNIVERSITY: PHYSICS </div>
+        <div class="home-bio-text" style="margin-bottom: 12px;">
+          <p>
+            Physics studies at Sultan Moulay Slimane University. Curriculum data not available for public sharing.
+          </p>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Core Learning</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+              <td class="cell-na">n/a</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="page hidden" id="page-lib">
+        <div class="section-label">[ 06 -- LIB ]</div>
+        <p style="color: var(--text-muted); font-size: 13px; line-height: 2;">RESOURCE NOT FOUND !</p>
+      </div>
+      <div class="page hidden" id="page-media">
+        <div class="section-label">[ 07 -- MEDIA ]</div>
+        <p style="color: var(--text-muted); font-size: 13px; line-height: 2;">RESOURCE NOT FOUND !</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="front_logic/app.js"></script>
+  <script src="front_logic/lookup_bar.js"></script>
+</body>
+</html>
