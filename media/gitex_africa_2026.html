@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khalid BARKAN — GITEX Africa 2026 Gallery</title>
+  <link rel="stylesheet" href="../front_logic/styles.css">
+  <style>
+    body {
+      background: var(--bg-primary);
+      padding: 0;
+      margin: 0;
+    }
+    .gallery-page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 24px 60px 24px;
+    }
+    /* minimal navbar */
+    .gallery-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-1);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .nav-home {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-home:hover {
+      color: var(--accent-yellow);
+    }
+    .theme-toggle-simple {
+      cursor: pointer;
+      background: var(--bg-card);
+      border: 1px solid var(--border-1);
+      padding: 6px 12px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
+      color: var(--text-dim);
+      transition: 0.1s;
+    }
+    .theme-toggle-simple:hover {
+      color: var(--accent-green);
+      border-color: var(--accent-green);
+    }
+    /* gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-2);
+      transition: transform 0.15s ease, border-color 0.15s;
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-3px);
+    }
+    .gallery-item a {
+      display: block;
+      text-decoration: none;
+    }
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+      transition: filter 0.2s;
+    }
+    .gallery-item:hover img {
+      filter: grayscale(0%);
+    }
+    .image-caption {
+      padding: 8px 10px;
+      font-size: 11px;
+      color: var(--text-faint);
+      text-align: center;
+      border-top: 1px solid var(--border-3);
+      font-family: monospace;
+      letter-spacing: 0.5px;
+    }
+    .gallery-header h1 {
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--accent-green);
+      margin-bottom: 8px;
+    }
+    .gallery-header p {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    hr {
+      margin: 24px 0;
+      border-color: var(--border-3);
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 48px;
+      color: var(--text-ghost);
+      font-size: 11px;
+      border-top: 1px solid var(--border-3);
+      padding-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="gallery-page">
+  <div class="gallery-nav">
+    <a href="../index.html" class="nav-home">[ HOME ]</a>
+    <button id="theme-toggle-btn" class="theme-toggle-simple">[ DARK / LIGHT ]</button>
+  </div>
+
+  <div class="gallery-header">
+    <h1>GITEX Africa 2026 – Marrakech</h1>
+    <p>📍 Marrakech, Morocco  |  📅 April 2026  |  🎤 moments, panels, people & tech</p>
+  </div>
+
+  <div id="gallery-container" class="gallery-grid">
+    <div style="text-align: center; padding: 40px; color: var(--text-muted);">loading gallery ...</div>
+  </div>
+
+  <div class="footer-note">
+    Moments from the event – click any image to view full size on Imgur
+  </div>
+</div>
+
+<script>
+  const rawLinks = [
+    "https://imgur.com/RBM0IZ5",
+    "https://imgur.com/qpn31o7",
+    "https://imgur.com/00B8uSc",
+    "https://imgur.com/5NSmvcP",
+    "https://imgur.com/JMOz8XD",
+    "https://imgur.com/vZQbAja",
+    "https://imgur.com/2ZiGb9U",
+    "https://imgur.com/duMZTev",
+    "https://imgur.com/fHOvB7f",
+    "https://imgur.com/ztvohDz",
+    "https://imgur.com/VFkrl6S",
+    "https://imgur.com/BEcURqN",
+    "https://imgur.com/IgMIJGr",
+    "https://imgur.com/15sHai1",
+    "https://imgur.com/15sHai1",
+    "https://imgur.com/wuxS2BC",
+    "https://imgur.com/gB7V35T",
+    "https://imgur.com/FmMFXby",
+    "https://imgur.com/CHyMrDd",
+    "https://imgur.com/ZvhluDV",
+    "https://imgur.com/qgqFIkh",
+    "https://imgur.com/qgqFIkh",
+    "https://imgur.com/p3W0uHf",
+    "https://imgur.com/ZWwGHeu",
+    "https://imgur.com/XYc5K9b",
+    "https://imgur.com/n9IPd4v",
+    "https://imgur.com/px8NvF3",
+    "https://imgur.com/AyPRa9x",
+    "https://imgur.com/5ECQFAc",
+    "https://imgur.com/344bET8",
+    "https://imgur.com/H3XMiZl",
+    "https://imgur.com/RRbKgjJ",
+    "https://imgur.com/byHeFSI",
+    "https://imgur.com/2dIR5fr",
+    "https://imgur.com/03vDe1K",
+    "https://imgur.com/WZCNxor",
+    "https://imgur.com/d8klxbQ",
+    "https://imgur.com/FbYMjir"
+  ];
+
+  function extractImgurId(url) {
+    const parts = url.split('/');
+    let last = parts[parts.length - 1];
+    last = last.split('?')[0];
+    return last;
+  }
+
+  function getDirectImageUrl(imgurId) {
+    return `https://i.imgur.com/${imgurId}.jpg`;
+  }
+
+  function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function renderGallery() {
+    const container = document.getElementById('gallery-container');
+    if (!container) return;
+
+    const shuffled = shuffleArray(rawLinks);
+    
+    let html = '';
+    for (const link of shuffled) {
+      const id = extractImgurId(link);
+      const imgUrl = getDirectImageUrl(id);
+      html += `
+        <div class="gallery-item">
+          <a href="${link}" target="_blank" rel="noopener noreferrer">
+            <img src="${imgUrl}" alt="GITEX Africa 2026 moment" loading="lazy" onerror="this.src='https://i.imgur.com/placeholder.png'; this.onerror=null;">
+            <div class="image-caption">[ click to open on Imgur ]</div>
+          </a>
+        </div>
+      `;
+    }
+    container.innerHTML = html;
+  }
+
+  function initTheme() {
+    const btn = document.getElementById('theme-toggle-btn');
+    if (!btn) return;
+
+    const applyTheme = (isLight) => {
+      if (isLight) {
+        document.body.classList.add('light');
+      } else {
+        document.body.classList.remove('light');
+      }
+      localStorage.setItem('gallery-theme', isLight ? 'light' : 'dark');
+    };
+
+    const saved = localStorage.getItem('gallery-theme');
+    if (saved === 'light') {
+      applyTheme(true);
+    } else if (saved === 'dark') {
+      applyTheme(false);
+    } else {
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (prefersLight && localStorage.getItem('gallery-theme') === null) {
+        applyTheme(true);
+      }
+    }
+
+    btn.addEventListener('click', () => {
+      const isLight = document.body.classList.contains('light');
+      applyTheme(!isLight);
+    });
+  }
+
+  renderGallery();
+  initTheme();
+</script>
+</body>
+</html>
