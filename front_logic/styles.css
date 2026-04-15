@@ -831,3 +831,153 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
   background-color: var(--bg-hover) !important;
   border-left: 3px solid var(--accent-green);
 }
+/*
+>? RESPONSIVE [mobile & tablet breakpoints -- additive only, nothing above is changed]
+*/
+
+/* Hamburger button -- hidden on desktop */
+#sidebar-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-1);
+  color: var(--text-muted);
+  font-size: 16px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1;
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+#sidebar-toggle:hover {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+/* Mobile sidebar overlay backdrop */
+#sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 199;
+}
+
+#sidebar-backdrop.active { display: block; }
+
+/* ── Tablet (≤ 900px) ── */
+@media (max-width: 900px) {
+  #main {
+    padding: 28px 24px;
+    max-width: 100%;
+  }
+
+  /* Social links: shorten to just brackets */
+  #social-links a {
+    font-size: 11px;
+  }
+}
+
+/* ── Mobile (≤ 680px) ── */
+@media (max-width: 680px) {
+
+  /* Show hamburger, hide topbar-left label text */
+  #sidebar-toggle { display: inline-flex; align-items: center; }
+
+  #topbar-left span { display: none; }
+
+  /* Topbar: stack into two rows */
+  #topbar {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 12px;
+  }
+
+  #topbar-right {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  /* Hide social links on very small screens -- they're in the page too */
+  #social-links {
+    display: none;
+  }
+
+  /* Shrink search button */
+  #search-trigger .search-kbd { display: none; }
+  #search-trigger { padding: 3px 8px; font-size: 11px; }
+
+  /* Sidebar becomes a slide-in drawer */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100vh;
+    width: 260px;
+    z-index: 200;
+    transition: left 0.22s ease;
+    border-right: 2px solid var(--border-1);
+  }
+
+  #sidebar.sidebar-open {
+    left: 0;
+  }
+
+  /* Main fills full width */
+  #layout { display: block; }
+  #main {
+    padding: 20px 16px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Bio row: stack photo above identity table */
+  .home-bio-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .home-pic-wrap {
+    width: 120px;
+    height: 145px;
+  }
+
+  /* Tables: scroll horizontally instead of overflowing */
+  .data-table,
+  .contact-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  /* But keep body text wrapping normally */
+  .data-table td,
+  .data-table th,
+  .contact-table td {
+    white-space: normal;
+    min-width: 80px;
+  }
+
+  /* Identity table: stack key/value */
+  .identity-table { font-size: 12px; }
+  .identity-table td { display: block; padding: 1px 0; }
+  .identity-table td:first-child {
+    color: var(--accent-yellow);
+    padding-top: 6px;
+  }
+
+  /* Nav grid: single column */
+  .home-nav-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Lookup modal padding */
+  #lookup-overlay { padding-top: 20px; }
+  #lookup-modal   { max-width: 96vw; }
+
+  /* Reduce section label spacing */
+  .section-label-sub { margin-top: 20px; }
+}

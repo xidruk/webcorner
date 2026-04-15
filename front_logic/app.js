@@ -53,3 +53,36 @@ var footerYear = document.getElementById('footer-year');
 if (footerYear) {
   footerYear.textContent = new Date().getFullYear();
 }
+
+(function () {
+  var toggle   = document.getElementById('sidebar-toggle');
+  var sidebar  = document.getElementById('sidebar');
+
+  var backdrop = document.createElement('div');
+  backdrop.id  = 'sidebar-backdrop';
+  document.body.appendChild(backdrop);
+
+  function openSidebar() {
+    sidebar.classList.add('sidebar-open');
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('sidebar-open');
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (toggle) toggle.addEventListener('click', function () {
+    sidebar.classList.contains('sidebar-open') ? closeSidebar() : openSidebar();
+  });
+
+  backdrop.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.toc-nav-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (window.innerWidth <= 680) closeSidebar();
+    });
+  });
+})();
