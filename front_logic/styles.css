@@ -882,9 +882,42 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
 /* ── Mobile (≤ 680px) ── */
 @media (max-width: 680px) {
 
+  /* Base font size bump */
+  body { font-size: 16px !important; }
+
+  /* Section labels */
+  .section-label     { font-size: 15px !important; }
+  .section-label-sub { font-size: 14px !important; margin-top: 20px; }
+
+  /* Body / bio text */
+  .home-bio-text p { font-size: 15px !important; line-height: 1.8; }
+
+  /* Identity table */
+  .identity-table            { font-size: 15px !important; }
+  .identity-table td         { display: block; padding: 1px 0; font-size: 15px !important; }
+  .identity-table td:first-child {
+    color: var(--accent-yellow);
+    padding-top: 6px;
+  }
+
+  /* Nav cards */
+  .home-nav-card-title { font-size: 15px !important; }
+  .home-nav-card-desc  { font-size: 14px !important; }
+
+  /* Data tables & contact table */
+  .data-table td,
+  .data-table th    { font-size: 14px !important; }
+  .contact-table td { font-size: 14px !important; }
+
+  /* Sidebar nav links */
+  .toc-nav-link  { font-size: 15px !important; }
+  .toc-meta-item { font-size: 13px !important; }
+
+  /* Topbar */
+  #topbar-left   { font-size: 14px !important; }
+
   /* Show hamburger, hide topbar-left label text */
   #sidebar-toggle { display: inline-flex; align-items: center; }
-
   #topbar-left span { display: none; }
 
   /* Topbar: stack into two rows */
@@ -900,13 +933,11 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
   }
 
   /* Hide social links on very small screens -- they're in the page too */
-  #social-links {
-    display: none;
-  }
+  #social-links { display: none; }
 
   /* Shrink search button */
   #search-trigger .search-kbd { display: none; }
-  #search-trigger { padding: 3px 8px; font-size: 11px; }
+  #search-trigger { padding: 3px 8px; font-size: 12px !important; }
 
   /* Sidebar becomes a slide-in drawer */
   #sidebar {
@@ -920,9 +951,7 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
     border-right: 2px solid var(--border-1);
   }
 
-  #sidebar.sidebar-open {
-    left: 0;
-  }
+  #sidebar.sidebar-open { left: 0; }
 
   /* Main fills full width */
   #layout { display: block; }
@@ -961,23 +990,10 @@ body.light .status-underdev { background-color: #fff5cc; color: #664400; border-
     min-width: 80px;
   }
 
-  /* Identity table: stack key/value */
-  .identity-table { font-size: 12px; }
-  .identity-table td { display: block; padding: 1px 0; }
-  .identity-table td:first-child {
-    color: var(--accent-yellow);
-    padding-top: 6px;
-  }
-
   /* Nav grid: single column */
-  .home-nav-grid {
-    grid-template-columns: 1fr !important;
-  }
+  .home-nav-grid { grid-template-columns: 1fr !important; }
 
-  /* Lookup modal padding */
+  /* Lookup modal */
   #lookup-overlay { padding-top: 20px; }
   #lookup-modal   { max-width: 96vw; }
-
-  /* Reduce section label spacing */
-  .section-label-sub { margin-top: 20px; }
 }
